@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "337947753623",
+    "firebase_url": "https://cabbooking-aed5a-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "cabbooking-aed5a",
+    "storage_bucket": "cabbooking-aed5a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:337947753623:android:45fffc980798331515fdd2",
+        "android_client_info": {
+          "package_name": "com.example.cab_booking"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB--gUJEJ6Ao9l486Irbzyc5mG-y7GCZtQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:337947753623:android:80f0feef05cc126a15fdd2",
+        "android_client_info": {
+          "package_name": "com.parv.cab_booking"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB--gUJEJ6Ao9l486Irbzyc5mG-y7GCZtQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:337947753623:android:0efad4d0a5bb0f7715fdd2",
+        "android_client_info": {
+          "package_name": "com.parv.cab_booking_customer"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB--gUJEJ6Ao9l486Irbzyc5mG-y7GCZtQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
