@@ -1,20 +1,27 @@
+// ignore_for_file: library_private_types_in_public_api, use_build_context_synchronously
+
 import 'dart:async';
-import 'package:cab_booking_customer/authetication/login_screen.dart';
+import 'package:cab_booking_customer/assistants/assistant_methods.dart';
+import 'package:cab_booking_customer/authentication/login_screen.dart';
 import 'package:cab_booking_customer/global/global.dart';
-import 'package:cab_booking_customer/mainScreen/main_screen.dart';
+import 'package:cab_booking_customer/mainScreens/main_screen.dart';
 import 'package:flutter/material.dart';
 
 class MySplashScreen extends StatefulWidget {
-  const MySplashScreen({super.key});
+  const MySplashScreen({Key? key}) : super(key: key);
 
   @override
-  State<MySplashScreen> createState() => _MySplashScreenState();
+  _MySplashScreenState createState() => _MySplashScreenState();
 }
 
 class _MySplashScreenState extends State<MySplashScreen> {
   startTimer() {
+    fAuth.currentUser != null
+        ? AssistantMethods.readCurrentOnlineUserInfo()
+        : null;
+
     Timer(const Duration(seconds: 3), () async {
-      if (await fAuth.currentUser != null) {
+      if (fAuth.currentUser != null) {
         currentFirebaseUser = fAuth.currentUser;
         Navigator.push(
             context, MaterialPageRoute(builder: (c) => const MainScreen()));
@@ -28,6 +35,7 @@ class _MySplashScreenState extends State<MySplashScreen> {
   @override
   void initState() {
     super.initState();
+
     startTimer();
   }
 
@@ -40,18 +48,17 @@ class _MySplashScreenState extends State<MySplashScreen> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Image.asset("assets/logo.png"),
+              Image.asset("images/logo.png"),
               const SizedBox(
                 height: 10,
               ),
               const Text(
-                "Cab Booking",
+                "Uber & inDriver Clone App",
                 style: TextStyle(
-                  fontSize: 24,
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
-                ),
-              )
+                    fontSize: 24,
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold),
+              ),
             ],
           ),
         ),
