@@ -23,6 +23,7 @@ class _MainScreenState extends State<MainScreen> {
   );
 
   GlobalKey<ScaffoldState> sKey = GlobalKey<ScaffoldState>();
+  double searchLocationContainerHeight = 290;
 
   blackThemeGoogleMap() {
     newGoogleMapController!.setMapStyle('''
@@ -235,6 +236,136 @@ class _MainScreenState extends State<MainScreen> {
               ),
             ),
           ),
+
+          //ui for searching location
+          Positioned(
+            bottom: 0,
+            left: 0,
+            right: 0,
+            child: AnimatedSize(
+              curve: Curves.easeIn,
+              duration: const Duration(milliseconds: 120),
+              child: Container(
+                height: searchLocationContainerHeight,
+                decoration: const BoxDecoration(
+                  color: Colors.black,
+                  borderRadius: BorderRadius.only(
+                    topRight: Radius.circular(20),
+                    topLeft: Radius.circular(20),
+                  ),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 24,
+                    vertical: 18,
+                  ),
+                  child: Column(
+                    children: [
+                      //from
+                      Row(
+                        children: [
+                          const Icon(
+                            Icons.add_location_alt_outlined,
+                            color: Colors.grey,
+                          ),
+                          const SizedBox(
+                            width: 12.0,
+                          ),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              const Text(
+                                "From",
+                                style: TextStyle(
+                                  color: Colors.grey,
+                                  fontSize: 12,
+                                ),
+                              ),
+                              Text(
+                                "Your current location",
+                                style: const TextStyle(
+                                  color: Colors.grey,
+                                  fontSize: 15,
+                                ),
+                              ),
+                            ],
+                          )
+                        ],
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      const Divider(
+                        height: 1,
+                        thickness: 1,
+                        color: Colors.grey,
+                      ),
+
+                      const SizedBox(
+                        height: 16,
+                      ),
+                      //to
+                      Row(
+                        children: [
+                          const Icon(
+                            Icons.add_location_alt_outlined,
+                            color: Colors.grey,
+                          ),
+                          const SizedBox(
+                            width: 12.0,
+                          ),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              const Text(
+                                "To",
+                                style: TextStyle(
+                                  color: Colors.grey,
+                                  fontSize: 12,
+                                ),
+                              ),
+                              Text(
+                                "Destiny",
+                                style: const TextStyle(
+                                  color: Colors.grey,
+                                  fontSize: 15,
+                                ),
+                              ),
+                            ],
+                          )
+                        ],
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      const Divider(
+                        height: 1,
+                        thickness: 1,
+                        color: Colors.grey,
+                      ),
+
+                      const SizedBox(
+                        height: 16,
+                      ),
+
+                      ElevatedButton(
+                        onPressed: () {},
+                        style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.green),
+                        child: const Text(
+                          "Request a ride",
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 16,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          )
         ],
       ),
     );
