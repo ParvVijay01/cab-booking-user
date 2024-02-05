@@ -65,9 +65,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
         "phone": phoneTextEditingController.text.trim(),
       };
 
-      DatabaseReference driversRef =
+      DatabaseReference usersRef =
           FirebaseDatabase.instance.ref().child("users");
-      driversRef.child(firebaseUser.uid).set(userMap);
+      usersRef.child(firebaseUser.uid).set(userMap);
 
       currentFirebaseUser = firebaseUser;
       Fluttertoast.showToast(msg: "Account has been Created.");
